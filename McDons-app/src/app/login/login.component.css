@@ -1,0 +1,27 @@
+
+.formtitle{
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+
+.formtitle h1{
+    font-size: 3.5em;
+}
+
+.formbody{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+.logoimg{
+    margin-top: 4.2em;
+}

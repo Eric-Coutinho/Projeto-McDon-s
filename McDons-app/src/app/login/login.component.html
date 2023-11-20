@@ -1,0 +1,43 @@
+<div class="container text-center">
+    <div class="row align-items-start">
+        <div class="col-sm-0 col-md-0 col-lg-4"></div>
+        <div class="col-md-12 col-lg-4">
+            <div class="formtitle">
+                <h1>Login</h1>
+            </div>
+            <div class="formbody">
+                <p>
+                    <mat-form-field>
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email">
+                        <button mat-icon-button matSuffix>
+                            <mat-icon>email</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </p>
+                <p class="senha">
+                    <mat-form-field>
+                        <mat-label>Senha</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </p>
+                <section>
+                    <div class="example-button-row" style="margin-top: 10px;">
+                        <a href="/cliente" routerLinkActive="active">
+                            <button mat-raised-button color="primary">Fazer Login</button>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+            <div class="logoimg">
+                <img src="../../assets/img/mcdonalds.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
