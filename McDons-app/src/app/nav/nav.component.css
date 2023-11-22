@@ -8,6 +8,14 @@
 }
 
 .textimg{
-    font-size: 2em;
+    font-family: 'Helvetica';
+    font-weight: 600;
+    font-size: 1.5em;
     padding-right: 0.5em;
+}
+
+@media (min-width: 280px) and (max-width: 653px) {
+    .textimg {
+        font-size: 0em;
+    }
 }

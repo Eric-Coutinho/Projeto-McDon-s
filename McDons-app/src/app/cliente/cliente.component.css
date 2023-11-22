@@ -1,0 +1,91 @@
+.formata{
+    padding: 0.5em;
+    justify-content: center;
+}
+
+.cardGrid{
+    margin: 0;
+    padding-inline: 0.5em;
+}
+
+.menuTitle h1{
+    text-align: center;
+    margin-block: 0.5em;
+    font-family: 'Helvetica';
+    font-weight: 600;
+    font-size: 3.5em;
+}
+
+.typesRow{
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 280px) and (max-width: 653px) {
+    .typeText{
+        padding-inline: 0.5em;
+    }
+}
+
+.card{
+    height: auto;
+    min-height: 31em;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    .card {
+        min-height: 32.5em;
+    }
+}
+
+.cardImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    padding: 0.5em;
+    min-height: 21em;
+}
+
+.cardImg img{
+    max-height: 20em;
+    width: fit-content;
+}
+
+.cardLine {
+    padding-inline: 0.5em;
+}
+
+.cardLine hr{
+    margin: 0;
+    padding-inline: 2em;
+}
+
+.cardItemType{
+    padding-inline: 0.3em;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.cardItemType a{
+    text-decoration: none;
+}
+
+.cardItemType h3{
+    text-align: flex-start;
+    margin-top: 1em;
+    font-family: 'Helvetica';
+    font-weight: 600;
+    font-size: 2em;
+    color: black;
+}
+
+.card-title{
+    font-family: 'Helvetica';
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.card-text{
+    word-wrap: break-word;
+}
