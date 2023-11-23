@@ -1,0 +1,15 @@
+.cardGrid{
+    padding: 1em;
+    margin: 0;
+}
+
+.productImage{
+    padding: 1em;
+    width: 30em;
+    height: 30em;
+}
+
+.card{
+    margin-top: 3em;
+    /* border: none; */
+}
