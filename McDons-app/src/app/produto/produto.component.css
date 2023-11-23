@@ -1,15 +1,59 @@
 .cardGrid{
     padding: 1em;
     margin: 0;
+    margin-top: 2em;
+}
+
+.card{
+    /* border: none; */
 }
 
 .productImage{
     padding: 1em;
-    width: 30em;
-    height: 30em;
 }
 
-.card{
-    margin-top: 3em;
-    /* border: none; */
+.productDescription{
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;    
+    /* background-color: red;    */
 }
+
+.productDescription hr{
+    margin-inline: 5em;
+}
+
+.descriptionTitle{
+    display: flex;
+    justify-content: center;
+}
+
+
+.descriptionTitle h3{
+    font-family: 'Helvetica';
+    font-weight: 600;
+    font-size: 2.5em;
+}
+
+.descriptionText{
+    padding: 2.5em;
+}
+
+.descriptionText p{
+    font-family: 'Helvetica';
+    font-weight: 500;
+    font-size: 1.5em;
+    text-align: justify;
+}
+
+.stars{
+    color: black;
+}
+
+.avaliation p{
+    font-family: 'Helvetica';
+    font-weight: 500;
+    font-size: 1.5em;
+    margin-block: 0.5em;
+}
+
