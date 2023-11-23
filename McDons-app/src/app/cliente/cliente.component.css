@@ -6,6 +6,7 @@
 .cardGrid{
     margin: 0;
     padding-inline: 0.5em;
+    margin-bottom: 1em;
 }
 
 .menuTitle h1{
@@ -37,11 +38,25 @@
     }
 }
 
+.productLink{
+    text-decoration: none;
+}
+
+.typeSection{
+    margin-left: 1em;
+    margin-block: 0.5em;
+}
+
+.typeSectionTitle{
+    font-family: 'Helvetica';
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
 .cardImg{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: red; */
     padding: 0.5em;
     min-height: 21em;
 }
@@ -88,4 +103,22 @@
 
 .card-text{
     word-wrap: break-word;
+}
+
+.buttonTop{ 
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.buttonTop button{ 
+    background-color: red;
+    border-radius: 200px;
+    height: 4em;
+    width: 4em;
+    padding: 1em;
+    margin-right: 0.4em;
+    margin-bottom: 1em;
+    color: yellow;
+    border-color: transparent;
 }
