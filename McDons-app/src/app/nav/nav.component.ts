@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CommonModule, Location } from '@angular/common';
 
 @Component({
   selector: 'app-nav',
@@ -9,5 +10,17 @@ import { CommonModule } from '@angular/common';
   styleUrl: './nav.component.css'
 })
 export class NavComponent {
+  constructor(private _lastPage: Location, private route: ActivatedRoute) { }
 
+  navigateToLastPage(){
+    const currentUrl = this._lastPage.path();
+    const baseUrl = ""
+
+    if (currentUrl === baseUrl) {
+      console.log("vai volta pra onde? kkk");
+    }
+    else{
+      this._lastPage.back();
+    }
+  }
 }

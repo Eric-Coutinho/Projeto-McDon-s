@@ -5,7 +5,7 @@
 }
 
 .card{
-    /* border: none; */
+    border: none;
 }
 
 .productImage{
@@ -46,8 +46,8 @@
     text-align: justify;
 }
 
-.stars{
-    color: black;
+.avaliation{ 
+    padding: 2.5em;
 }
 
 .avaliation p{
@@ -55,5 +55,44 @@
     font-weight: 500;
     font-size: 1.5em;
     margin-block: 0.5em;
+}
+
+.avaliation h2{
+    font-family: 'Helvetica';
+    font-weight: 600;
+    font-size: 2.5em;
+    margin-block: 0.5em;
+}
+
+.promoGrid{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 2em;
+}
+
+.promoCard{
+    background-color: red;
+    padding: 1em;
+    margin-bottom: 5em;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.promoGrid img{
+    width: -webkit-fill-available;
+    border-radius: 20px;
+}
+
+.promoTitle{
+    display: flex;
+    justify-content: center;
+}
+
+.promoTitle p{
+    font-family: 'Helvetica';
+    font-weight: 500;
+    font-size: 1.5em;
+    color: yellow;
 }
 

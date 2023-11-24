@@ -1,0 +1,32 @@
+<div class="row row-cols-1 row-cols-md-3 g-4 grid">
+    <div class="col col-sm-1 col-md-1 col-lg-2"></div>
+    <div class="col col-sm-1 col-md-8 col-lg-8 form">
+        <mat-form-field>
+            <mat-label>Foto do Produto</mat-label>
+            <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+        </mat-form-field>
+    </div>
+    <div class="col col-sm-1 col-md-8 col-lg-8 form">
+        <mat-form-field>
+            <mat-label>Nome do Produto</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Tipo</mat-label>
+            <mat-select>
+                <mat-option value="Produto">Item</mat-option>
+                <mat-option value="Promoção">Promoção</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Preço do Produto</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Descrição do Produto</mat-label>
+            <textarea matInput></textarea>
+        </mat-form-field>
+        <button mat-flat-button color="primary" class="formButton">Criar Produto</button>
+        <button mat-flat-button color="warn" class="formButton">Cancelar</button>
+    </div>
+</div>

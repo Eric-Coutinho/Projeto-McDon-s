@@ -1,0 +1,32 @@
+.grid{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: -webkit-fill-available;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+textarea{
+    resize: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.formButton{
+    margin-block: 0.3em;
+}
