@@ -129,7 +129,25 @@
     left: 0;
 }
 
+.buttonOrder{ 
+    position: fixed;
+    bottom: 5em;
+    left: 0;
+}
+
 .buttonCreate button{ 
+    background-color: red;
+    border-radius: 200px;
+    height: 4em;
+    width: 4em;
+    padding: 1em;
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+    color: yellow;
+    border-color: transparent;
+}
+
+.buttonOrder button{ 
     background-color: red;
     border-radius: 200px;
     height: 4em;
