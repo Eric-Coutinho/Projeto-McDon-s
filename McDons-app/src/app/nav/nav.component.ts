@@ -15,8 +15,9 @@ export class NavComponent {
   navigateToLastPage(){
     const currentUrl = this._lastPage.path();
     const baseUrl = ""
+    const totemUrl = "/totem"
 
-    if (currentUrl === baseUrl) {
+    if (currentUrl === baseUrl || currentUrl === totemUrl) {
       console.log("vai volta pra onde? kkk");
     }
     else{

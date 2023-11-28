@@ -9,7 +9,8 @@
                 <p>
                     <mat-form-field>
                         <mat-label>Email</mat-label>
-                        <input matInput type="email">
+                        <input matInput placeholder="Meu Email" 
+                            [(ngModel)]="email"/>
                         <button mat-icon-button matSuffix class="btn-email" disabled="">
                             <mat-icon>email</mat-icon>
                         </button>
@@ -18,7 +19,7 @@
                 <p class="senha">
                     <mat-form-field>
                         <mat-label>Senha</mat-label>
-                        <input matInput [type]="hide ? 'password' : 'text'">
+                        <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password">
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                             [attr.aria-pressed]="hide">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>

@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "OXiijyDlaPwvlQE7ACVw0l5R1cwFVGvTSa2CDzlA40g/+o5bvwLyaXgT5H4hms8ReQ8i1W2hO5nmsjsLzlCIOw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\McDons-Back\\McDons-Back.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\disrct\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.14\\microsoft.aspnetcore.openapi.7.0.14.nupkg.sha512",
+    "C:\\Users\\disrct\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\disrct\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\disrct\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\disrct\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\disrct\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\disrct\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
+    "C:\\Users\\disrct\\.nuget\\packages\\trevisharp.security.jwt\\1.0.0\\trevisharp.security.jwt.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
