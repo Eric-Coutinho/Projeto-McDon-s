@@ -1,0 +1,46 @@
+.grid{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: -webkit-fill-available;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    padding-block: 2em;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+textarea{
+    resize: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.cadastroTitle{
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 2.5em;
+}
+
+.cadastroTitle h2{
+    font-family: 'Helvetica';
+    font-weight: 600;
+    font-size: 3em;
+}
+
+.formButton{
+    margin-top: 0.5em;
+}

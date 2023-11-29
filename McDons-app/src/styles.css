@@ -10,4 +10,6 @@ body::-webkit-scrollbar {
 body {
     -ms-overflow-style: none;
     scrollbar-width: none;
-  }
+    background-repeat: no-repeat;
+    background-size: auto;
+}

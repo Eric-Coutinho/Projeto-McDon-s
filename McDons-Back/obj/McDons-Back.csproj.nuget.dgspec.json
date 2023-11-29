@@ -4,14 +4,14 @@
     "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\McDons-Back\\McDons-Back.csproj": {}
   },
   "projects": {
-    "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\McDons-Back\\McDons-Back.csproj": {
+    "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\DTO\\DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\McDons-Back\\McDons-Back.csproj",
-        "projectName": "McDons-Back",
-        "projectPath": "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\McDons-Back\\McDons-Back.csproj",
+        "projectUniqueName": "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\DTO\\DTO.csproj",
+        "projectName": "DTO",
+        "projectPath": "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\DTO\\DTO.csproj",
         "packagesPath": "C:\\Users\\disrct\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\McDons-Back\\obj\\",
+        "outputPath": "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\DTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\disrct\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,10 +37,77 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\McDons-Back\\McDons-Back.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\McDons-Back\\McDons-Back.csproj",
+        "projectName": "McDons-Back",
+        "projectPath": "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\McDons-Back\\McDons-Back.csproj",
+        "packagesPath": "C:\\Users\\disrct\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\McDons-Back\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\disrct\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\DTO\\DTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

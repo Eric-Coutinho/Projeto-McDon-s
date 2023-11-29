@@ -25,3 +25,7 @@ input.example-right-align::-webkit-inner-spin-button {
 .logoimg{
     margin-top: 4.2em;
 }
+
+.mat-mdc-button-persistent-ripple mdc-button__ripple{
+    background-color: red;
+}
