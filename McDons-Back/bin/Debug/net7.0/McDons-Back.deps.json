@@ -12,7 +12,8 @@
           "Microsoft.AspNetCore.OpenApi": "7.0.14",
           "Microsoft.EntityFrameworkCore.Design": "7.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0",
-          "Swashbuckle.AspNetCore": "6.5.0"
+          "Swashbuckle.AspNetCore": "6.5.0",
+          "Trevisharp.Security.Jwt": "1.0.0"
         },
         "runtime": {
           "McDons-Back.dll": {}
@@ -668,6 +669,17 @@
           }
         }
       },
+      "Trevisharp.Security.Jwt/1.0.0": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore": "6.5.0"
+        },
+        "runtime": {
+          "lib/net6.0/Trevisharp.Security.Jwt.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "DTO/1.0.0": {
         "runtime": {
           "DTO.dll": {}
@@ -1191,6 +1203,13 @@
       "sha512": "sha512-c1ho9WU9ZxMZawML+ssPKZfdnrg/OjR3pe0m9v8230z3acqphwvPJqzAkH54xRYm5ntZHGG1EPP3sux9H3qSPg==",
       "path": "system.windows.extensions/5.0.0",
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
+    },
+    "Trevisharp.Security.Jwt/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JMcdAjQpLl1TAYN+8owQ07SVlVSDvlVwAalCuilPviZJFoaPaFpCxIjV20mi1IZya3tQC2AgfpCXWNDbG9esLA==",
+      "path": "trevisharp.security.jwt/1.0.0",
+      "hashPath": "trevisharp.security.jwt.1.0.0.nupkg.sha512"
     },
     "DTO/1.0.0": {
       "type": "project",

@@ -22,7 +22,7 @@ create table Usuario(
 	Nome varchar(80) not null,
 	Senha varchar(MAX) not null,
 	Salt varchar(200) not null,
-	IsAdm bit not null;
+	IsAdm bit not null,
 );
 go
 

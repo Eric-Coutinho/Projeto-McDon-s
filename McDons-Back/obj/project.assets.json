@@ -3928,11 +3928,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\McDons-Back\\McDons-Back.csproj",
+      "projectUniqueName": "C:\\Users\\disrct\\Desktop\\Projeto McDons\\Projeto-McDon-s\\McDons-Back\\McDons-Back.csproj",
       "projectName": "McDons-Back",
-      "projectPath": "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\McDons-Back\\McDons-Back.csproj",
+      "projectPath": "C:\\Users\\disrct\\Desktop\\Projeto McDons\\Projeto-McDon-s\\McDons-Back\\McDons-Back.csproj",
       "packagesPath": "C:\\Users\\disrct\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\McDons-Back\\obj\\",
+      "outputPath": "C:\\Users\\disrct\\Desktop\\Projeto McDons\\Projeto-McDon-s\\McDons-Back\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\disrct\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -3947,8 +3947,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\DTO\\DTO.csproj": {
-              "projectPath": "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\DTO\\DTO.csproj"
+            "C:\\Users\\disrct\\Desktop\\Projeto McDons\\Projeto-McDon-s\\DTO\\DTO.csproj": {
+              "projectPath": "C:\\Users\\disrct\\Desktop\\Projeto McDons\\Projeto-McDon-s\\DTO\\DTO.csproj"
             }
           }
         }

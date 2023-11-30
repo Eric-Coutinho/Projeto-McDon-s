@@ -19,27 +19,27 @@ import { ClientService } from '../client-service';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  // constructor (public dialog: MatDialog,
-  //   private client: ClientService,
-  //   private http: HttpClient
-  //   ) { }
+  constructor (public dialog: MatDialog,
+    private client: ClientService,
+    private http: HttpClient
+    ) { }
 
   hide = true;
   
-  // email: string = ""
-  // password: string = ""
+  username: string = ""
+  password: string = ""
   
-  // logar()
-  // {
-  //   this.client.login({
-  //     login: this.email,
-  //     password: this.password
-  //   }, (result: any) => {
-  //     if (result == null)
-  //       alert("Usuário ou senha inválidos.")
-  //     else
-  //       sessionStorage.setItem('jwt', JSON.stringify(result))
-  //   })
-  // }
+  logar()
+  {
+    this.client.login({
+      login: this.username,
+      password: this.password
+    }, (result: any) => {
+      if (result == null)
+        alert("Usuário ou senha inválidos.")
+      else
+        sessionStorage.setItem('jwt', JSON.stringify(result))
+    })
+  }
 
 }

@@ -17,7 +17,7 @@ export const routes: Routes = [
     { path: 'cliente', component: ClienteComponent },
     { path: 'produto', component: ProdutoComponent },
     { path: 'adm', component: AdmComponent},
-    { path:'newProduct', component: NewProductComponent},
+    { path:'novoProduto', component: NewProductComponent},
     { path:'order', component: OrderComponent},
     { path:'orderKitchen', component: OrderKitchenComponent},
     { path: 'totem', component: TotemComponent }

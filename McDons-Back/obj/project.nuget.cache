@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "F5j9YB9vglytKiKfDszo95zrAXV0nzKtpvOWXpGBdMdLG0O7FBt1fB4EkQn2SJWfamBU3D3aUHPo1VAqjzKv2g==",
+  "dgSpecHash": "0HjUZ0ToWzVoJMyNKkB+PFYWcB3ueyhlVR3rCenvvVbMPNtDY8bmK2+axL5JrcDk2eTTD1ZlzlHL45pS5kkKbg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\disrct\\Desktop\\Projeto_McDons\\Projeto-McDon-s\\McDons-Back\\McDons-Back.csproj",
+  "projectFilePath": "C:\\Users\\disrct\\Desktop\\Projeto McDons\\Projeto-McDon-s\\McDons-Back\\McDons-Back.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\disrct\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\disrct\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

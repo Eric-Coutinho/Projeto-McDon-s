@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using DTO;
 using McDons_Back.Services;
@@ -42,4 +44,22 @@ public class UserController : ControllerBase
 
             return Ok(new {jwt});
         }
+
+        [HttpPost("Register")]
+        [EnableCors("DefaultPolicy")]
+        public async Task<IActionResult> Create(
+            [FromBody] UserData user,
+            [FromServices] IUserService service)
+            {
+                var errors = new List<String>();
+                if(user is null || user.Login is null)
+                    errors.Add("É necessário informar um login.");
+                if(user.Login.Length < 5)
+                    errors.Add("O login deve ter pelo menos 5 caracteres.");
+                if(errors.Count > 0)
+                    return BadRequest(errors);
+
+                await service.Create(user);
+                return Ok();
+            }
 }
