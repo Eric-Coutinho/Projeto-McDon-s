@@ -7,39 +7,52 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { ClientService } from '../client-service';
 
 @Component({
-  selector: 'app-login', 
+  selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, MatIconModule, MatInputModule, MatButtonModule, MatDividerModule, MatFormFieldModule, MatDialogModule],
+  imports: [CommonModule, FormsModule, MatIconModule, MatInputModule, MatButtonModule, MatDividerModule, MatFormFieldModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  constructor (public dialog: MatDialog,
-    private client: ClientService,
-    private http: HttpClient
-    ) { }
+  constructor(private client: ClientService,
+    private http: HttpClient,
+    private router: Router
+  ) { }
 
   hide = true;
-  
+
   username: string = ""
   password: string = ""
-  
-  logar()
-  {
+
+  logar() {
+    if (this.username == null || this.password == null)
+      return;
+
     this.client.login({
       login: this.username,
       password: this.password
-    }, (result: any) => {
-      if (result == null)
-        alert("Usuário ou senha inválidos.")
-      else
-        sessionStorage.setItem('jwt', JSON.stringify(result))
-    })
+    },
+      (result: any) => {
+        console.log(result);
+        if (result == null)
+          alert("Usuário ou senha inválidos.")
+        else {
+          sessionStorage.setItem('jwt', JSON.stringify(result))
+
+          if (result.isAdm == true)
+          {
+            this.router.navigate(['/adm'])
+            return;
+          }
+
+          this.router.navigate(['/cliente'])
+        }
+      })
   }
 
 }

@@ -29,3 +29,7 @@ input.example-right-align::-webkit-inner-spin-button {
 .mat-mdc-button-persistent-ripple mdc-button__ripple{
     background-color: red;
 }
+
+.formButton{
+    width: 18em;
+}

@@ -42,7 +42,7 @@ public class UserController : ControllerBase
                 isAdm = loggedUser.IsAdm
             });
 
-            return Ok(new {jwt});
+            return Ok(new {jwt, loggedUser.IsAdm});
         }
 
         [HttpPost("register")]
@@ -51,7 +51,6 @@ public class UserController : ControllerBase
             [FromBody] UserData user,
             [FromServices] IUserService service)
             {
-                Console.WriteLine(user.login);
                 var errors = new List<string>();
                 if(user is null || user.login is null)
                     errors.Add("É necessário informar um login.");

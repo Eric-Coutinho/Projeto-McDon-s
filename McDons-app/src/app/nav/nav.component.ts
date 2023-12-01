@@ -17,8 +17,16 @@ export class NavComponent {
     const baseUrl = ""
     const totemUrl = "/totem"
 
+    const clientUrl = "/cliente"
+    const admUrl = "/adm"
+
     if (currentUrl === baseUrl || currentUrl === totemUrl) {
       console.log("vai volta pra onde? kkk");
+    }
+    if(currentUrl == clientUrl || currentUrl == admUrl)
+    {
+      sessionStorage.clear();
+      this._lastPage.back();
     }
     else{
       this._lastPage.back();

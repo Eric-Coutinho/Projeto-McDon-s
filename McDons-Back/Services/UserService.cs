@@ -25,6 +25,7 @@ public class UserService: IUserService
         var salt = await security.GenerateSalt();
 
         usuario.Nome = data.login;
+        usuario.IsAdm = data.isAdm;
         usuario.Senha = await security.HashPassword(data.password, salt);
         usuario.Salt = salt;
 

@@ -9,8 +9,7 @@
                 <p>
                     <mat-form-field>
                         <mat-label>Email</mat-label>
-                        <input matInput placeholder="Meu Email" />
-                            <!-- [(ngModel)]="email"/> -->
+                        <input matInput placeholder="Meu Email" [(ngModel)]="username"/>
                         <button mat-icon-button matSuffix class="btn-email" disabled="">
                             <mat-icon>email</mat-icon>
                         </button>
@@ -19,8 +18,7 @@
                 <p class="senha">
                     <mat-form-field>
                         <mat-label>Senha</mat-label>
-                        <input matInput [type]="hide ? 'password' : 'text'" />
-                        <!-- [(ngModel)]="password"> -->
+                        <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password">
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                             [attr.aria-pressed]="hide">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -29,13 +27,15 @@
                 </p>
                 <section>
                     <div class="example-button-row" style="margin-top: 10px;">
-                        <a href="/cliente" routerLinkActive="active">
-                            <button mat-raised-button color="primary">Fazer Login</button>
+                        <a routerLinkActive="active">
+                            <button (click)="logar()" mat-raised-button color="primary" class="formButton">Fazer
+                                Login</button>
                         </a>
                     </div>
                     <div class="example-button-row" style="margin-top: 10px;">
                         <a href="/cadastro" routerLinkActive="active">
-                            <button mat-raised-button color="warn" class="btn-cadastro">Cadastre-se</button>
+                            <button mat-raised-button color="warn" class="btn-cadastro"
+                                class="formButton">Cadastre-se</button>
                         </a>
                     </div>
                 </section>
