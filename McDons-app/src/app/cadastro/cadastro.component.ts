@@ -11,7 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 
 import { HttpClient } from '@angular/common/http';
-import { ClientService } from '../client-service';
+import { ClientService } from '../service/client-service';
 import { Router } from '@angular/router';
 
 

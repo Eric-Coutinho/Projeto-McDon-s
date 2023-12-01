@@ -14,11 +14,11 @@
     <div class="col col-sm-1 col-md-8 col-lg-8 form">
         <mat-form-field>
             <mat-label>Nome do Produto</mat-label>
-            <input matInput>
+            <input matInput [(ngModel)]="nome"/>
         </mat-form-field>
         <mat-form-field>
             <mat-label>Tipo</mat-label>
-            <mat-select>
+            <mat-select matInput [(ngModel)]="tipo">
                 <mat-option value="Combo">Combo</mat-option>
                 <mat-option value="Hamburguer">Hamburguer</mat-option>
                 <mat-option value="Bebida">Bebida</mat-option>
@@ -28,13 +28,13 @@
         </mat-form-field>
         <mat-form-field>
             <mat-label>Preço do Produto</mat-label>
-            <input matInput>
+            <input matInput [(ngModel)]="preco"/>
         </mat-form-field>
         <mat-form-field>
             <mat-label>Descrição do Produto</mat-label>
-            <textarea matInput></textarea>
+            <input matInput [(ngModel)]="descricao"/>
         </mat-form-field>
-        <button mat-flat-button color="primary" class="formButton">Criar Produto</button>
+        <button mat-flat-button color="primary" class="formButton" (click)="create()">Criar Produto</button>
         <button mat-flat-button color="warn" class="formButton">Cancelar</button>
     </div>
 </div>

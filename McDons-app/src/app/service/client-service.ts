@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
-import { ApiClientService } from './api-client.service';
+import { ApiClientService } from '../api-client.service';
 
-import { ClientData } from './client-data';
+import { ClientData } from '../data/client-data';
 
 @Injectable({
     providedIn: 'root'

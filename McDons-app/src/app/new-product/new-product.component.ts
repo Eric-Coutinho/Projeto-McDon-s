@@ -8,33 +8,36 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
+import { FormsModule } from '@angular/forms';
+
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { ClientService } from '../service/client-service';
+import { ProdutoService } from '../service/produto-service';
 
 @Component({
   selector: 'app-new-product',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatButtonModule, MatDividerModule, MatIconModule],
+  imports: [CommonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatButtonModule, MatDividerModule, MatIconModule, FormsModule],
   templateUrl: './new-product.component.html',
   styleUrl: './new-product.component.css'
 })
 export class NewProductComponent {
-//   constructor (public dialog: MatDialog,
-//     private client: ClientService, private http: HttpClient) { } <====== implementar isso aq
+  constructor (private product: ProdutoService, private router: Router) { }
+  nome: string = ""
+  tipo: string = ""
+  preco: number = 0
+  descricao: string = ""
 
-  // uploadFile = (files: any) => {
-  //   if(files.length === 0){
-  //     return;
-  //   }
-  //   let fileToUpload = <File>files[0];
-  //   const formData = new FormData();
-  //   formData.append('file', fileToUpload, fileToUpload.name);
-
-  //   var jwt = sessionStorage.getItem('jwt');
-  //   if (jwt == null)
-  //     return
-  //   formData.append('jwt', jwt)
-
-  //   this.http.put('https:/localhost:7122/user/image', formData)
-  //     .subscribe(result => console.log("ok!"));
-  // }
+  create()
+  {
+    this.product.register({
+      nome: this.nome,
+      tipo: this.tipo,
+      preco: this.preco,
+      descricao: this.descricao
+    })
+    console.log("foiii");
+    this.router.navigate(['/adm'])
+  }
 }

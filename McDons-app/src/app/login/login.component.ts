@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { ClientService } from '../client-service';
+import { ClientService } from '../service/client-service';
 
 @Component({
   selector: 'app-login',
