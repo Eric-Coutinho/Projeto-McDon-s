@@ -22,11 +22,11 @@
         </mat-form-field>
         <mat-form-field>
             <mat-label>Confirmar Senha</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" 
+            <input matInput [type]="hide1 ? 'password' : 'text'" 
                 [(ngModel)]="repeatPassword"/>
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide1">
+                <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
         </mat-form-field>
         <button mat-flat-button color="primary" class="formButton" (click)="create()">Criar Conta</button>

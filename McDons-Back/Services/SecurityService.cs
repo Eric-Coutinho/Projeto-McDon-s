@@ -9,7 +9,7 @@ namespace McDons_Back.Services;
 
 public class SecurityService : ISecurityService
 {
-    public async Task<string> GerateSalt()
+    public async Task<string> GenerateSalt()
     {
         var saltBytes = getRandomArray();
         var base64salt = Convert.ToBase64String(saltBytes);
@@ -50,9 +50,10 @@ public class SecurityService : ISecurityService
         if (generatedSignature != signature)
             return default(T);
 
+        Console.WriteLine(payload);
         var payloadBytes = Convert.FromBase64String(payload);
         var payloadJson = Encoding.UTF8.GetString(payloadBytes);
-
+        Console.WriteLine(payloadJson);
         var obj = JsonSerializer.Deserialize<T>(payloadJson);
         return obj;
     }
@@ -89,8 +90,7 @@ public class SecurityService : ISecurityService
 
     private string getJsonHeader()
     {
-        var headerObj = new
-        {
+        var headerObj = new {
             alg = "HS256",
             typ = "JWT"
         };

@@ -17,6 +17,16 @@ builder.Services.AddSingleton<CryptoService>( p => new() {
 });
 builder.Services.AddSingleton<ISecurityService, SecurityService>();
 
+builder.Services.AddCors(options => 
+{
+    options.AddPolicy("DefaultPolicy",
+        policy => {
+            policy
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowAnyOrigin();
+        });
+});
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

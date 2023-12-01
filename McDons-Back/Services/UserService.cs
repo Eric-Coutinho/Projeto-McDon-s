@@ -22,10 +22,10 @@ public class UserService: IUserService
     public async Task Create(UserData data)
     {
         Usuario usuario = new Usuario();
-        var salt = await security.GerateSalt();
+        var salt = await security.GenerateSalt();
 
-        usuario.Nome = data.Login;
-        usuario.Senha = await security.HashPassword(data.Senha, salt);
+        usuario.Nome = data.login;
+        usuario.Senha = await security.HashPassword(data.password, salt);
         usuario.Salt = salt;
 
         this.ctx.Add(usuario);

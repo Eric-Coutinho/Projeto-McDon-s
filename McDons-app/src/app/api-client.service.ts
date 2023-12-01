@@ -6,7 +6,7 @@ import { Injectable } from "@angular/core";
 })
 
 export class ApiClientService{
-    backend = 'http://localhost:5037' // alterar a porta
+    backend = 'http://localhost:5037/'
 
     constructor(private http: HttpClient) { }
 

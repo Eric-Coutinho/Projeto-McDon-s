@@ -35,5 +35,7 @@ export class CadastroComponent {
     }
 
   hide = true;
+  
+  hide1 = true;
 }
 

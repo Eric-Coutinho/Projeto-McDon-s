@@ -1,22 +1,22 @@
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
+using Trevisharp.Security.Jwt;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
+using System.Collections.Generic;
+
 using DTO;
 using McDons_Back.Services;
-using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Mvc;
-using Trevisharp.Security.Jwt;
+using McDons_Back.Model;
 
 namespace McDons_Back.Controllers;
 
 [ApiController]
 [Route("user")]
-
 public class UserController : ControllerBase
 {
     [HttpPost("login")]
     [EnableCors("DefaultPolicy")]
-
     public async Task<ActionResult> Login(
         [FromBody]UserData user,
         [FromServices]IUserService service,
@@ -24,13 +24,13 @@ public class UserController : ControllerBase
         [FromServices]CryptoService crypto)
         {
             var loggedUser = await service
-                .GetByLogin(user.Login);
+                .GetByLogin(user.login);
 
             if(loggedUser == null)
                 return Unauthorized("Usuário não existe.");
 
             var password = await security.HashPassword(
-                user.Senha, loggedUser.Salt
+                user.password, loggedUser.Salt
             );
             var realPassword = loggedUser.Senha;
 
@@ -45,16 +45,17 @@ public class UserController : ControllerBase
             return Ok(new {jwt});
         }
 
-        [HttpPost("Register")]
+        [HttpPost("register")]
         [EnableCors("DefaultPolicy")]
         public async Task<IActionResult> Create(
             [FromBody] UserData user,
             [FromServices] IUserService service)
             {
-                var errors = new List<String>();
-                if(user is null || user.Login is null)
+                Console.WriteLine(user.login);
+                var errors = new List<string>();
+                if(user is null || user.login is null)
                     errors.Add("É necessário informar um login.");
-                if(user.Login.Length < 5)
+                if(user.login.Length < 5)
                     errors.Add("O login deve ter pelo menos 5 caracteres.");
                 if(errors.Count > 0)
                     return BadRequest(errors);
