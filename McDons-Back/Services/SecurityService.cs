@@ -27,6 +27,36 @@ public class SecurityService : ISecurityService
         return hash;
     }
 
+    public async Task<string> GenerateJwt<T>(T obj)
+    {
+        string password = await getPassword();
+        var base64Password = toBase64(password);
+        var jwt = getJwt(obj, base64Password);
+        return jwt;
+    }
+
+    public async Task<T> ValidadeJwt<T>(string jwt)
+    {
+        var data = jwt.Split('.');
+
+        var header = data[0];
+        var payload = data[1];
+        var signature = data[2];
+
+        var password = await getPassword();
+        var base64Password = toBase64(password);
+
+        var generatedSignature = getSignature(header, payload, base64Password);
+        if (generatedSignature != signature)
+            return default(T);
+
+        var payloadBytes = Convert.FromBase64String(payload);
+        var payloadJson = Encoding.UTF8.GetString(payloadBytes);
+
+        var obj = JsonSerializer.Deserialize<T>(payloadJson);
+        return obj;
+    }
+
     private async Task<string> getPassword()
     {
         var dotEnvPath = Path.Combine(
@@ -41,7 +71,7 @@ public class SecurityService : ISecurityService
 
             return data[1];
         }
-        throw new Exception("É necessário um .env com uma Password");
+        throw new Exception("É necessário um .env com uma Password.");
     }
 
     private string getJwt<T>(T obj, string password)
@@ -86,7 +116,7 @@ public class SecurityService : ISecurityService
         var signatureBytes = algorithm.ComputeHash(contentBytes);
         var signature = Convert.ToBase64String(signatureBytes);
         signature = signature.Replace("=", "");
-        
+
         return signature;
     }
 
@@ -102,7 +132,7 @@ public class SecurityService : ISecurityService
     {
         byte[] randomBytes = new byte[24];
         Random.Shared.NextBytes(randomBytes);
-        
+
         return randomBytes;
     }
 
