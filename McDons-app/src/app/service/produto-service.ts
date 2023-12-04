@@ -16,5 +16,19 @@ export class ProdutoService {
             .subscribe(response => console.log(response))
     }
 
+    fetchByType(data: ProdutoData)
+    {
+        this.http.get('produto/getByType')
+            .subscribe(response => console.log(response))
+    }
+    
+    fetchAll(data: ProdutoData)
+    {
+        this.http.get('produto/getAll')
+            .subscribe(response => console.log(response))
+    }
+
+
+
 }
 

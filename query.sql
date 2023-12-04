@@ -32,7 +32,7 @@ create table Produto(
 	Tipo varchar(80) not null,
 	Preco float not null,
 	Descricao varchar(200),
-	ImagemID int references Imagem(ID) not null,
+	ImagemID int references Imagem(ID) null,
 );
 go
 

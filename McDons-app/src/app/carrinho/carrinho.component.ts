@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -16,28 +16,27 @@ import { ClientService } from '../service/client-service';
 import { ProdutoService } from '../service/produto-service';
 
 @Component({
-  selector: 'app-new-product',
+  selector: 'app-carrinho',
   standalone: true,
   imports: [CommonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatButtonModule, MatDividerModule, MatIconModule, FormsModule],
-  templateUrl: './new-product.component.html',
-  styleUrl: './new-product.component.css'
+  templateUrl: './carrinho.component.html',
+  styleUrl: './carrinho.component.css'
 })
-export class NewProductComponent {
-  constructor (private product: ProdutoService, private router: Router) { }
-  nome: string = ""
-  tipo: string = ""
-  preco: number = 0
-  descricao: string = ""
+export class CarrinhoComponent {
+  constructor(private viewportScroller: ViewportScroller) { }
+  public cupom(){
 
-  create()
-  {
-    this.product.register({
-      nome: this.nome,
-      tipo: this.tipo,
-      preco: this.preco,
-      descricao: this.descricao
-    })
-    console.log(this.product);
-    this.router.navigate(['/adm'])
+  }
+  
+  public removeItem(){
+
+  }
+
+  public finishOrder(){
+    
+  }
+
+  public navigateToSection(section: string){
+    this.viewportScroller.scrollToAnchor(section);
   }
 }

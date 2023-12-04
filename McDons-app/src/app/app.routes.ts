@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { OrderComponent } from './order/order.component';
 import { TotemComponent } from './totem/totem.component';
 import { ClienteComponent } from './cliente/cliente.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { NewProductComponent } from './new-product/new-product.component';
@@ -20,7 +21,9 @@ export const routes: Routes = [
     { path:'novoProduto', component: NewProductComponent},
     { path:'order', component: OrderComponent},
     { path:'orderKitchen', component: OrderKitchenComponent},
-    { path: 'totem', component: TotemComponent }
+    { path: 'totem', component: TotemComponent },
+    { path: 'carrinho', component: CarrinhoComponent }
+
 ];
 
 @NgModule({

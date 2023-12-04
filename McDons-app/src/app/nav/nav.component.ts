@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule, Location } from '@angular/common';
 
 @Component({
@@ -10,7 +10,20 @@ import { CommonModule, Location } from '@angular/common';
   styleUrl: './nav.component.css'
 })
 export class NavComponent {
-  constructor(private _lastPage: Location, private route: ActivatedRoute) { }
+  constructor(private _lastPage: Location, private route: ActivatedRoute, private router: Router) { }
+
+  goToLogin(){
+    const currentUrl = this._lastPage.path();
+    const totemUrl = "/totem";
+
+    if (currentUrl == totemUrl) {
+      console.log("vai volta pra onde? kkk");
+    }
+    else{
+      sessionStorage.clear();
+      this.router.navigate(['/'])
+    }
+  }
 
   navigateToLastPage(){
     const currentUrl = this._lastPage.path();
@@ -20,16 +33,21 @@ export class NavComponent {
     const clientUrl = "/cliente"
     const admUrl = "/adm"
 
-    if (currentUrl === baseUrl || currentUrl === totemUrl) {
+    if (currentUrl == baseUrl || currentUrl == totemUrl) {
+      if (currentUrl == baseUrl)
+        alert("Não é possível retornar.")
+
       console.log("vai volta pra onde? kkk");
     }
-    if(currentUrl == clientUrl || currentUrl == admUrl)
-    {
-      sessionStorage.clear();
-      this._lastPage.back();
+    else{ 
+      if(currentUrl == clientUrl || currentUrl == admUrl)
+      {
+        sessionStorage.clear();
+        this._lastPage.back();
+      }
+      else 
+        this._lastPage.back();
     }
-    else{
-      this._lastPage.back();
-    }
+    
   }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule, ViewportScroller } from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
+import { ProdutoService } from '../service/produto-service';
 
 @Component({
   selector: 'app-adm',
@@ -10,14 +11,13 @@ import {MatIconModule} from '@angular/material/icon';
   styleUrl: './adm.component.css'
 })
 export class AdmComponent {
-  constructor(private viewportScroller: ViewportScroller) {}
+  constructor(private product: ProdutoService, private viewportScroller: ViewportScroller) { }
   
-  public navigateToSection(section: string){
-    this.viewportScroller.scrollToAnchor(section);
-  }
-
-  public createNewProduct(){
+  fetchAll(){
     
   }
 
+  public navigateToSection(section: string){
+    this.viewportScroller.scrollToAnchor(section);
+  }
 }

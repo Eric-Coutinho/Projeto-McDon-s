@@ -32,7 +32,7 @@
   </div>
   <div class="row row-cols-1 row-cols-md-3 g-4 cardGrid">
     <div class="col">
-      <a href="/produto" routerLinkActive="active" class="productLink">
+      <a (click)="fetchAll()" routerLinkActive="active" class="productLink">
         <div class="card">
           <div class="cardImg">
             <img src="../../assets/img/Products/Lanches/BigDon.png" class="img-fluid card-img-top" alt="ProductImg">
@@ -266,16 +266,24 @@
 
 <div class="buttonCreate">
   <a href="/novoProduto" routerLinkActive="active">
-    <button (click)="createNewProduct()">
+    <button>
       <mat-icon>add</mat-icon>
     </button>
   </a>
 </div>
 
 <div class="buttonOrder">
-  <a href="/order" routerLinkActive="active">
+  <a href="/order"routerLinkActive="active">
     <button>
       <mat-icon> fastfood</mat-icon>
+    </button>
+  </a>
+</div>
+
+<div class="buttonTotem">
+  <a href="/totem" routerLinkActive="active">
+    <button>
+      <mat-icon>dock</mat-icon>
     </button>
   </a>
 </div>

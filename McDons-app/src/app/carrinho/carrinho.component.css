@@ -1,0 +1,204 @@
+.cardGrid {
+    padding: 1em;
+    margin: 0;
+    margin-top: 2em;
+}
+
+.card {
+    border: none;
+}
+
+.productImage {
+    padding: 1em;
+}
+
+.productDescription {
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    /* background-color: red;    */
+}
+
+.productDescription hr {
+    margin-inline: 5em;
+}
+
+.descriptionTitle {
+    display: flex;
+    justify-content: center;
+}
+
+
+.descriptionTitle h3 {
+    font-family: 'Helvetica';
+    font-weight: 600;
+    font-size: 2.5em;
+}
+
+.descriptionText {
+    padding: 2.5em;
+}
+
+.descriptionText p {
+    font-family: 'Helvetica';
+    font-weight: 500;
+    font-size: 1.5em;
+    text-align: justify;
+}
+
+.avaliation {
+    padding: 2.5em;
+}
+
+.avaliation p {
+    font-family: 'Helvetica';
+    font-weight: 500;
+    font-size: 1.5em;
+    margin-block: 0.5em;
+}
+
+.avaliation h2 {
+    font-family: 'Helvetica';
+    font-weight: 600;
+    font-size: 2.5em;
+    margin-block: 0.5em;
+}
+
+.promoGrid {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 2em;
+}
+
+.promoCard {
+    background-color: red;
+    padding: 1em;
+    margin-bottom: 3.5em;
+    justify-content: center;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.promoGrid img {
+    width: -webkit-fill-available;
+    border-radius: 20px;
+}
+
+.promoTitle {
+    display: flex;
+    justify-content: center;
+}
+
+.promoTitle p {
+    font-family: 'Helvetica';
+    font-weight: 500;
+    font-size: 2em;
+    color: yellow;
+}
+
+.promoCard input{
+    font-size: 2.2em;
+}
+
+mat-label {
+    font-family: 'Helvetica';
+    font-size: 1.2em;
+}
+
+.separar {
+    margin-inline: 10em;
+}
+
+.buttonRemover {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonRemover button {
+    background-color: red;
+    color: yellow;
+}
+
+.buttonTop {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.buttonTop button {
+    background-color: red;
+    border-radius: 200px;
+    height: 4em;
+    width: 4em;
+    padding: 1em;
+    margin-right: 1.5em;
+    margin-bottom: 1em;
+    color: yellow;
+    border-color: transparent;
+}
+
+.buttonCupom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.buttonCupom button {
+    background-color: red;
+    border-radius: 200px;
+    height: 4em;
+    width: 4em;
+    padding: 1em;
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+    color: yellow;
+    border-color: transparent;
+}
+
+.paymentGrid {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+
+}
+
+.paymentCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    border-radius: 15px;
+    width: max-content;
+    padding: 1em;
+    margin-bottom: 5em;
+}
+
+.paymentTitle h3 {
+    padding: 0.5em;
+    font-weight: 600;
+    font-family: 'Helvetica';
+    font-size: 3em;
+    width: max-content;
+}
+
+mat-option {
+    font-family: 'Helvetica';
+    font-size: 2em;
+}
+
+.paymentButton {
+    background-color: red;
+    border-radius: 10px;
+    height: 5em;
+    width: 6em;
+    padding: 1em;
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+    color: yellow;
+    border-color: transparent;
+}
