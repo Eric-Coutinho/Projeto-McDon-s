@@ -12,7 +12,7 @@ using McDons_Back.Services;
 namespace McDons_Back.Controllers;
 
 [ApiController]
-[Route("product")]
+[Route("produto")]
 public class ProductController : ControllerBase
 {
         [HttpPost("create")]
