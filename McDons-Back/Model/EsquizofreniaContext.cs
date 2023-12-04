@@ -35,7 +35,7 @@ public partial class EsquizofreniaContext : DbContext
     {
         modelBuilder.Entity<Imagem>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC270EFB8655");
+            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC278207F97F");
 
             entity.ToTable("Imagem");
 
@@ -45,7 +45,7 @@ public partial class EsquizofreniaContext : DbContext
 
         modelBuilder.Entity<Pedido>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC2796065F08");
+            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC27653C7A4B");
 
             entity.ToTable("Pedido");
 
@@ -57,7 +57,7 @@ public partial class EsquizofreniaContext : DbContext
 
         modelBuilder.Entity<Produto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC27CEFF4692");
+            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC27F0239F63");
 
             entity.ToTable("Produto");
 
@@ -76,13 +76,12 @@ public partial class EsquizofreniaContext : DbContext
 
             entity.HasOne(d => d.Imagem).WithMany(p => p.Produtos)
                 .HasForeignKey(d => d.ImagemId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Produto__ImagemI__286302EC");
         });
 
         modelBuilder.Entity<ProdutoPedido>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__ProdutoP__3214EC270838F3F2");
+            entity.HasKey(e => e.Id).HasName("PK__ProdutoP__3214EC2798CF8EF6");
 
             entity.ToTable("ProdutoPedido");
 
@@ -103,7 +102,7 @@ public partial class EsquizofreniaContext : DbContext
 
         modelBuilder.Entity<Promocao>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Promocao__3214EC274F616AB7");
+            entity.HasKey(e => e.Id).HasName("PK__Promocao__3214EC27B1494158");
 
             entity.ToTable("Promocao");
 
@@ -118,7 +117,7 @@ public partial class EsquizofreniaContext : DbContext
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC27272B2121");
+            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC277B3042B2");
 
             entity.ToTable("Usuario");
 

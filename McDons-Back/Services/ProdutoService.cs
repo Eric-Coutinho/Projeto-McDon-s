@@ -10,6 +10,7 @@ using Model;
 public class ProdutoService: IProdutoService
 {
     EsquizofreniaContext ctx;
+    ISecurityService security;
 
     public ProdutoService(EsquizofreniaContext ctx)
     {
