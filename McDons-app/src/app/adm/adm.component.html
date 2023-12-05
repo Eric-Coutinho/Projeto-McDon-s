@@ -31,8 +31,8 @@
     <div class="typeSectionTitle" id="hamburguer">Hamburguers</div>
   </div>
   <div class="row row-cols-1 row-cols-md-3 g-4 cardGrid">
-    <div *ngFor="let item of list" [ngSwitch]="item.tipo">
-      <div *ngIf="(item.tipo) == 'Acompanhamento'; else elseBlock">
+    <div *ngFor="let item of hamburguerList">
+      <div *ngIf="(item.tipo) == 'Hamburguer'">
         <div class="col">
           <a (click)="goToInfo()" routerLinkActive="active" class="productLink">
             <div class="card">
@@ -50,116 +50,32 @@
           </a>
         </div>
       </div>
-      <ng-template #elseBlock></ng-template>
     </div>
-    <!-- 
-    <div class="col">
-      <a (click)="goToInfo()" routerLinkActive="active" class="productLink">
-        <div class="card">
-          <div class="cardImg">
-            <img src="../../assets/img/Products/Lanches/BigDon.png" class="img-fluid card-img-top" alt="ProductImg">
-          </div>
-          <div class="cardLine">
-            <hr>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title" alt="ProductName">Big Don</h3>
-            <p class="card-text" alt="Ingredients">Dois Hambúrgueres, Alface, Queijo, Molho Especial, Cebola, Picles e
-              Pão com Gergelim.</p>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="col">
-      <a href="/produto" routerLinkActive="active" class="productLink">
-        <div class="card">
-          <div class="cardImg">
-            <img src="../../assets/img/Products/Lanches/DonFeliz.png" class="img-fluid card-img-top" alt="ProductImg">
-          </div>
-          <div class="cardLine">
-            <hr>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title" alt="ProductName">Don Feliz</h3>
-            <p class="card-text" alt="Ingredients">Combo com Hamburguer, DonFritas Média, DonValle de Uva, Donnoninho e
-              1
-              Brinquedo.</p>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="col">
-      <a href="/produto" routerLinkActive="active" class="productLink">
-        <div class="card">
-          <div class="cardImg">
-            <img src="../../assets/img/Products/Lanches/DonChicken Jr.png" class="img-fluid card-img-top"
-              alt="ProductImg">
-          </div>
-          <div class="cardLine">
-            <hr>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title" alt="ProductName">DonChicken Jr</h3>
-            <p class="card-text" alt="Ingredients">Frango Empanado, maionese, Alface e Pão com Gergelim.</p>
-          </div>
-        </div>
-      </a>
-    </div> -->
   </div>
 
   <div class="typeSection">
     <div class="typeSectionTitle" id="bebida">Bebidas</div>
   </div>
   <div class="row row-cols-1 row-cols-md-3 g-4 cardGrid">
-    <div class="col">
-      <a href="/produto" routerLinkActive="active" class="productLink">
-        <div class="card">
-          <div class="cardImg">
-            <img src="../../assets/img/Products/Bebidas/DonValleLaranja500.png" class="img-fluid card-img-top"
-              alt="ProductImg">
-          </div>
-          <div class="cardLine">
-            <hr>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title" alt="ProductName">Suco Don Valle Laranja</h3>
-            <p class="card-text" alt="Ingredients">Suco Don Valle de Laranja com 500mL.</p>
-          </div>
+    <div *ngFor="let item of bebidaList">
+      <div *ngIf="(item.tipo) == 'Bebida'">
+        <div class="col">
+          <a (click)="goToInfo()" routerLinkActive="active" class="productLink">
+            <div class="card">
+              <div class="cardImg">
+                <img src="../../assets/img/Products/Lanches/BigDon.png" class="img-fluid card-img-top" alt="ProductImg">
+              </div>
+              <div class="cardLine">
+                <hr>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title" alt="ProductName">{{ item.nome }}</h3>
+                <p class="card-text" alt="Ingredients">{{ item.descricao }}</p>
+              </div>
+            </div>
+          </a>
         </div>
-      </a>
-    </div>
-    <div class="col">
-      <a href="/produto" routerLinkActive="active" class="productLink">
-        <div class="card">
-          <div class="cardImg">
-            <img src="../../assets/img/Products/Bebidas/DonValleUva700.png" class="img-fluid card-img-top"
-              alt="ProductImg">
-          </div>
-          <div class="cardLine">
-            <hr>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title" alt="ProductName">Suco Don Valle Uva</h3>
-            <p class="card-text" alt="Ingredients">Suco Don Valle de Uva com 700mL.</p>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="col">
-      <a href="/produto" routerLinkActive="active" class="productLink">
-        <div class="card">
-          <div class="cardImg">
-            <img src="../../assets/img/Products/Bebidas/Coca700.png" class="img-fluid card-img-top" alt="ProductImg">
-          </div>
-          <div class="cardLine">
-            <hr>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title" alt="ProductName">Coquinha Geladinha hmmm</h3>
-            <p class="card-text" alt="Ingredients">Frango Empanado, maionese, Alface e Pão com Gergelim.</p>
-          </div>
-        </div>
-      </a>
+      </div>
     </div>
   </div>
 
@@ -167,56 +83,25 @@
     <div class="typeSectionTitle" id="acompanhamento">Acompanhamentos</div>
   </div>
   <div class="row row-cols-1 row-cols-md-3 g-4 cardGrid">
-    <div class="col">
-      <a href="/produto" routerLinkActive="active" class="productLink">
-        <div class="card">
-          <div class="cardImg">
-            <img src="../../assets/img/Products/Acompanhamentos/Python Nuggets.png" class="img-fluid card-img-top"
-              alt="ProductImg">
-          </div>
-          <div class="cardLine">
-            <hr>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title" alt="ProductName">Python Nuggets</h3>
-            <p class="card-text" alt="Ingredients">Python Nuggets Crocantes de Peito de Frango com 4 Unidades.</p>
-          </div>
+    <div *ngFor="let item of acompanhamentoList">
+      <div *ngIf="(item.tipo) == 'Acompanhamento'">
+        <div class="col">
+          <a (click)="goToInfo()" routerLinkActive="active" class="productLink">
+            <div class="card">
+              <div class="cardImg">
+                <img src="../../assets/img/Products/Lanches/BigDon.png" class="img-fluid card-img-top" alt="ProductImg">
+              </div>
+              <div class="cardLine">
+                <hr>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title" alt="ProductName">{{ item.nome }}</h3>
+                <p class="card-text" alt="Ingredients">{{ item.descricao }}</p>
+              </div>
+            </div>
+          </a>
         </div>
-      </a>
-    </div>
-    <div class="col">
-      <a href="/produto" routerLinkActive="active" class="productLink">
-        <div class="card">
-          <div class="cardImg">
-            <img src="../../assets/img/Products/Acompanhamentos/DonFritas Grande.png" class="img-fluid card-img-top"
-              alt="ProductImg">
-          </div>
-          <div class="cardLine">
-            <hr>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title" alt="ProductName">Don Fritas Grande</h3>
-            <p class="card-text" alt="Ingredients">Batata Frita Tamanho Grande com 200g.</p>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="col">
-      <a href="/produto" routerLinkActive="active" class="productLink">
-        <div class="card">
-          <div class="cardImg">
-            <img src="../../assets/img/Products/Acompanhamentos/DonFritas Media.png" class="img-fluid card-img-top"
-              alt="ProductImg">
-          </div>
-          <div class="cardLine">
-            <hr>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title" alt="ProductName">Don Fritas Média</h3>
-            <p class="card-text" alt="Ingredients">Batata Frita Tamanho Médio com 120g.</p>
-          </div>
-        </div>
-      </a>
+      </div>
     </div>
   </div>
 
@@ -224,57 +109,25 @@
     <div class="typeSectionTitle" id="sobremesa">Sobremesas</div>
   </div>
   <div class="row row-cols-1 row-cols-md-3 g-4 cardGrid">
-    <div class="col">
-      <a href="/produto" routerLinkActive="active" class="productLink">
-        <div class="card">
-          <div class="cardImg">
-            <img src="../../assets/img/Products/Sobremesas/Donnoninho.png" class="img-fluid card-img-top"
-              alt="ProductImg">
-          </div>
-          <div class="cardLine">
-            <hr>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title" alt="ProductName">Donnoninho</h3>
-            <p class="card-text" alt="Ingredients">Delicioso Iogurte Sabor Morango com 25g.</p>
-          </div>
+    <div *ngFor="let item of sobremesaList">
+      <div *ngIf="(item.tipo) == 'Sobremesa'">
+        <div class="col">
+          <a (click)="goToInfo()" routerLinkActive="active" class="productLink">
+            <div class="card">
+              <div class="cardImg">
+                <img src="../../assets/img/Products/Lanches/BigDon.png" class="img-fluid card-img-top" alt="ProductImg">
+              </div>
+              <div class="cardLine">
+                <hr>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title" alt="ProductName">{{ item.nome }}</h3>
+                <p class="card-text" alt="Ingredients">{{ item.descricao }}</p>
+              </div>
+            </div>
+          </a>
         </div>
-      </a>
-    </div>
-    <div class="col">
-      <a href="/produto" routerLinkActive="active" class="productLink">
-        <div class="card">
-          <div class="cardImg">
-            <img src="../../assets/img/Products/Sobremesas/DonFlurry.png" class="img-fluid card-img-top"
-              alt="ProductImg">
-          </div>
-          <div class="cardLine">
-            <hr>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title" alt="ProductName">Don Flurry Ovomaltine©</h3>
-            <p class="card-text" alt="Ingredients">Sorvete Sabor Baunilha com Flocos de Ovomaltine© e Cobertura de
-              Chocolate.</p>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="col">
-      <a href="/produto" routerLinkActive="active" class="productLink">
-        <div class="card">
-          <div class="cardImg">
-            <img src="../../assets/img/Products/Sobremesas/DonShake de Ovomaltine.png" class="img-fluid card-img-top"
-              alt="ProductImg">
-          </div>
-          <div class="cardLine">
-            <hr>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title" alt="ProductName">DonShake Ovomaltine©</h3>
-            <p class="card-text" alt="Ingredients">DonShake Sabor Ovomaltine© Feito com Leite e Batido na Hora.</p>
-          </div>
-        </div>
-      </a>
+      </div>
     </div>
   </div>
 

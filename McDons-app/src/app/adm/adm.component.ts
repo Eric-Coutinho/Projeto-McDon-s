@@ -33,6 +33,11 @@ export class AdmComponent implements OnInit{
       (data: any) => {
         this.list = data;
         console.log("produtos:", this.list);
+  
+        this.hamburguerList = this.list.filter((produto: any) => produto.tipo === 'Hamburguer');
+        this.bebidaList = this.list.filter((produto: any) => produto.tipo === 'Bebida');
+        this.acompanhamentoList = this.list.filter((produto: any) => produto.tipo === 'Acompanhamento');
+        this.sobremesaList = this.list.filter((produto: any) => produto.tipo === 'Sobremesa');
       },
       (error: any) => {
         console.error('Erro ao obter produtos:', error);
