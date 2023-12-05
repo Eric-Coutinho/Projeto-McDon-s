@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using DTO;
 using McDons_Back.Model;
 using McDons_Back.Services;
+using System.Text.Json;
+using System.IO;
 
 namespace McDons_Back.Controllers;
 
@@ -52,5 +54,72 @@ public class ProductController : ControllerBase
         var produtos = service.GetByType(tipo);
 
         return Ok(produtos);
+    }
+
+    [HttpGet("image/{photoId}")]
+    [EnableCors("DefaultPolicy")]
+    
+    public async Task<IActionResult> GetImage(
+        int photoId,
+        [FromServices]ISecurityService security,
+        [FromServices]EsquizofreniaContext ctx
+    )
+    {
+
+        var query =
+            from image in ctx.Imagems
+            where image.Id == photoId
+            select image;
+
+        var photo = await query.FirstOrDefaultAsync();
+        if(photo is null)
+            return NotFound();
+
+        return File(photo.Foto, "image/jpeg");
+    }
+    
+
+    [DisableRequestSizeLimit]
+    [HttpPost("imagem")]
+    [EnableCors("DefaultPolicy")]
+    public async Task<IActionResult> AddImage(
+        [FromServices]CryptoService security
+    )
+    {
+        var jwtData = Request.Form["jwt"];
+        var jwtObj = JsonSerializer
+            .Deserialize<JwtToken>(jwtData);
+
+        var jwt = jwtObj.jwt;
+
+        var userOjb = security
+            .Validate<JwtPayload>(jwt);
+
+        if (userOjb is null)
+            return Unauthorized();
+        var userId = userOjb.id;
+
+        var files = Request.Form.Files;
+        if (files is null || files.Count == 0)
+            return BadRequest();
+
+        var file = Request.Form.Files[0];
+        if (file.Length < 1)
+            return BadRequest();
+        
+        using MemoryStream ms = new MemoryStream();
+        await file.CopyToAsync(ms);
+        var data = ms.GetBuffer();
+
+        Imagem img = new Imagem();
+        img.Foto = data;
+
+        EsquizofreniaContext ctx = new EsquizofreniaContext();
+        ctx.Add(img);
+        await ctx.SaveChangesAsync();
+
+        return Ok(new {
+            imgID = img.Id
+        });
     }
 }

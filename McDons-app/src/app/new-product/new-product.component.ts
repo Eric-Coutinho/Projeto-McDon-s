@@ -23,7 +23,7 @@ import { ProdutoService } from '../service/produto-service';
   styleUrl: './new-product.component.css'
 })
 export class NewProductComponent {
-  constructor (private product: ProdutoService, private router: Router) { }
+  constructor (private product: ProdutoService, private router: Router, private http: HttpClient) { }
   nome: string = ""
   tipo: string = ""
   preco: number = 0
@@ -38,6 +38,23 @@ export class NewProductComponent {
       descricao: this.descricao
     })
     this.router.navigate(['/adm'])
-    
   }
+
+  uploadFile = (files: any) => {
+    if (files.length === 0) {
+      return;
+    }
+    let fileToUpload = <File>files[0];
+    const formData = new FormData();
+    formData.append('file', fileToUpload, fileToUpload.name);
+
+    var jwt = sessionStorage.getItem('jwt');
+    if (jwt == null)
+      return
+    formData.append('jwt', jwt)
+     
+    this.http.put('https://localhost:5037/produto/image', formData)
+      .subscribe(result => console.log("ok!"));
+  }
+
 }

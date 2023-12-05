@@ -46,6 +46,7 @@ textarea{
     padding: 1.5em;
     border-radius: 10px;
     border: solid 3px gray;
+    flex-direction: column;
 }
 
 .productImage p{
@@ -54,8 +55,7 @@ textarea{
     font-size: 2em;
 }
 
-.productImage input{
+.productImage img{
     width: -webkit-fill-available;
-    background-color: gray;
 }
 

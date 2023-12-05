@@ -5,8 +5,10 @@
                 <p>Foto do Produto</p>
             </mat-label>
             <div class="imageCard">
-                <!-- <input type="image" src="../../assets/img/defaultProduct.png" alt="Submit"> -->
-                <!-- <input type="file" placeholder="Choose file" (change)="uploadFile(file.files)" style="display: none;"> -->
+                <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)"
+                    style="display:none;">
+                    <img src="../../assets/img/defaultProduct.png">
+                <button mat-raised-button color="primary" (click)="file.click()">Carregar imagem</button>
             </div>
         </div>
     </div>
@@ -14,7 +16,7 @@
     <div class="col col-sm-1 col-md-8 col-lg-8 form">
         <mat-form-field>
             <mat-label>Nome do Produto</mat-label>
-            <input matInput [(ngModel)]="nome"/>
+            <input matInput [(ngModel)]="nome" />
         </mat-form-field>
         <mat-form-field>
             <mat-label>Tipo</mat-label>
@@ -28,11 +30,11 @@
         </mat-form-field>
         <mat-form-field>
             <mat-label>Preço do Produto</mat-label>
-            <input matInput [(ngModel)]="preco"/>
+            <input matInput [(ngModel)]="preco" />
         </mat-form-field>
         <mat-form-field>
             <mat-label>Descrição do Produto</mat-label>
-            <input matInput [(ngModel)]="descricao"/>
+            <input matInput [(ngModel)]="descricao" />
         </mat-form-field>
         <button mat-flat-button color="primary" class="formButton" (click)="create()">Criar Produto</button>
         <button mat-flat-button color="warn" class="formButton">Cancelar</button>
