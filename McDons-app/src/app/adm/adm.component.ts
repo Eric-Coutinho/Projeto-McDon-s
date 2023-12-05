@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule, ViewportScroller } from '@angular/common';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+
 import { ProdutoService } from '../service/produto-service';
 
 @Component({
@@ -10,14 +11,37 @@ import { ProdutoService } from '../service/produto-service';
   templateUrl: './adm.component.html',
   styleUrl: './adm.component.css'
 })
-export class AdmComponent {
-  constructor(private product: ProdutoService, private viewportScroller: ViewportScroller) { }
+export class AdmComponent implements OnInit{  
+  constructor(private products: ProdutoService, private viewportScroller: ViewportScroller) { }
   
-  fetchAll(){
-    
+  list: any = [];
+  hamburguerList: any = [];
+  bebidaList: any = [];
+  acompanhamentoList: any = [];
+  sobremesaList: any = [];
+  
+  goToInfo(){
+    console.log("oiii")
   }
 
   public navigateToSection(section: string){
     this.viewportScroller.scrollToAnchor(section);
   }
+
+  ngOnInit() {
+    this.products.getAll().subscribe(
+      (data: any) => {
+        this.list = data;
+        console.log("produtos:", this.list);
+      },
+      (error: any) => {
+        console.error('Erro ao obter produtos:', error);
+      }
+    );
+  }
+
+  logTipo(tipo: string) {
+  console.log('Tipo:', tipo);
+  return tipo;
+}
 }

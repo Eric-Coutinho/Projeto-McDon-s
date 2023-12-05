@@ -37,7 +37,7 @@ export class NewProductComponent {
       preco: this.preco,
       descricao: this.descricao
     })
-    console.log(this.product);
     this.router.navigate(['/adm'])
+    
   }
 }

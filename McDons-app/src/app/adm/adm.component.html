@@ -31,8 +31,30 @@
     <div class="typeSectionTitle" id="hamburguer">Hamburguers</div>
   </div>
   <div class="row row-cols-1 row-cols-md-3 g-4 cardGrid">
+    <div *ngFor="let item of list" [ngSwitch]="item.tipo">
+      <div *ngIf="(item.tipo) == 'Acompanhamento'; else elseBlock">
+        <div class="col">
+          <a (click)="goToInfo()" routerLinkActive="active" class="productLink">
+            <div class="card">
+              <div class="cardImg">
+                <img src="../../assets/img/Products/Lanches/BigDon.png" class="img-fluid card-img-top" alt="ProductImg">
+              </div>
+              <div class="cardLine">
+                <hr>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title" alt="ProductName">{{ item.nome }}</h3>
+                <p class="card-text" alt="Ingredients">{{ item.descricao }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <ng-template #elseBlock></ng-template>
+    </div>
+    <!-- 
     <div class="col">
-      <a (click)="fetchAll()" routerLinkActive="active" class="productLink">
+      <a (click)="goToInfo()" routerLinkActive="active" class="productLink">
         <div class="card">
           <div class="cardImg">
             <img src="../../assets/img/Products/Lanches/BigDon.png" class="img-fluid card-img-top" alt="ProductImg">
@@ -82,7 +104,7 @@
           </div>
         </div>
       </a>
-    </div>
+    </div> -->
   </div>
 
   <div class="typeSection">
@@ -273,7 +295,7 @@
 </div>
 
 <div class="buttonOrder">
-  <a href="/order"routerLinkActive="active">
+  <a href="/order" routerLinkActive="active">
     <button>
       <mat-icon> fastfood</mat-icon>
     </button>
