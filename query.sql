@@ -32,7 +32,7 @@ create table Produto(
 	Tipo varchar(80) not null,
 	Preco float not null,
 	Descricao varchar(200),
-	ImagemID int references Imagem(ID) null,
+	ImagemID int references Imagem(ID) not null,
 );
 go
 
@@ -57,6 +57,3 @@ create table ProdutoPedido(
 	PedidoID int references Pedido(ID) not null,
 );
 
-
-INSERT INTO Usuario(Nome, Senha)
-VALUES ('adm', 'adm');

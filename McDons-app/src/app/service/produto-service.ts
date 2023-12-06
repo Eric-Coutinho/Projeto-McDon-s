@@ -22,6 +22,10 @@ export class ProdutoService {
         this.http.get('produto/getByType')
             .subscribe(response => console.log(response))
     }
+
+    getById(id: any): Observable<any> {
+      return this.http.get(`produto/getById/${id}`);
+    }
     
     getAll(): Observable<any[]> {
         return this.http.get('produto/getAll').pipe(

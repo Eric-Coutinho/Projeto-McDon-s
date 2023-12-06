@@ -14,9 +14,10 @@ export class NavComponent {
 
   goToLogin(){
     const currentUrl = this._lastPage.path();
-    const totemUrl = "/totem";
+    const totemUrl = "/totem"; 
+    const carrinhoUrl = "/carrinho"; 
 
-    if (currentUrl == totemUrl) {
+    if (currentUrl == totemUrl || currentUrl == carrinhoUrl) {
       console.log("vai volta pra onde? kkk");
     }
     else{
@@ -48,6 +49,5 @@ export class NavComponent {
       else 
         this._lastPage.back();
     }
-    
   }
 }

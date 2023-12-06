@@ -9,15 +9,15 @@
 
     <div class="col col-sm-10 col-md-6 col-lg-5 productDescription">
         <div class="descriptionTitle">
-            <h3>Big Don</h3>
+            <h3>{{ produto.nome }}</h3>
         </div>
         <hr>
         <div class="descriptionText">
-            <p>Dois Hambúrgueres, Alface, Queijo, Molho Especial, Cebola, Picles e Pão com Gergelim.</p>
+            <p>{{ produto.descricao }}</p>
         </div>
         <div class="avaliation">
-            <p>Preço:</p>
-            <h2>R$20,00</h2>
+            <!-- <p>Preço:</p> -->
+            <h2>R${{ produto.preco }}</h2>
         </div>
     </div>
 </div>

@@ -18,6 +18,7 @@ export class TotemComponent {
   constructor(private viewportScroller: ViewportScroller, private router: Router, private products: ProdutoService) {}
   
   list: any = [];
+  comboList: any = [];
   hamburguerList: any = [];
   bebidaList: any = [];
   acompanhamentoList: any = [];
@@ -32,7 +33,8 @@ export class TotemComponent {
       (data: any) => {
         this.list = data;
         console.log("produtos:", this.list);
-  
+        
+        this.comboList = this.list.filter((produto: any) => produto.tipo === 'Combo');
         this.hamburguerList = this.list.filter((produto: any) => produto.tipo === 'Hamburguer');
         this.bebidaList = this.list.filter((produto: any) => produto.tipo === 'Bebida');
         this.acompanhamentoList = this.list.filter((produto: any) => produto.tipo === 'Acompanhamento');

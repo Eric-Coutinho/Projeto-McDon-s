@@ -3,6 +3,7 @@ import { CommonModule, ViewportScroller } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 
 import { ProdutoService } from '../service/produto-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-adm',
@@ -12,16 +13,17 @@ import { ProdutoService } from '../service/produto-service';
   styleUrl: './adm.component.css'
 })
 export class AdmComponent implements OnInit{  
-  constructor(private products: ProdutoService, private viewportScroller: ViewportScroller) { }
+  constructor(private products: ProdutoService, private viewportScroller: ViewportScroller, private router: Router) { }
   
   list: any = [];
+  comboList: any = [];
   hamburguerList: any = [];
   bebidaList: any = [];
   acompanhamentoList: any = [];
   sobremesaList: any = [];
   
-  goToInfo(){
-    console.log("oiii")
+  goToInfo(id: any){
+    this.router.navigate(['/produto'], { queryParams: {id: id} });
   }
 
   public navigateToSection(section: string){
@@ -34,6 +36,7 @@ export class AdmComponent implements OnInit{
         this.list = data;
         console.log("produtos:", this.list);
   
+        this.comboList = this.list.filter((produto: any) => produto.tipo === 'Combo');
         this.hamburguerList = this.list.filter((produto: any) => produto.tipo === 'Hamburguer');
         this.bebidaList = this.list.filter((produto: any) => produto.tipo === 'Bebida');
         this.acompanhamentoList = this.list.filter((produto: any) => produto.tipo === 'Acompanhamento');

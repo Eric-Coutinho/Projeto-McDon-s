@@ -28,13 +28,14 @@ public partial class EsquizofreniaContext : DbContext
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Data Source=CT-C-001YN\\SQLEXPRESS;Initial Catalog=Esquizofrenia;Integrated Security=True;TrustServerCertificate=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Imagem>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC278207F97F");
+            entity.HasKey(e => e.Id).HasName("PK__Imagem__3214EC270FDD83DD");
 
             entity.ToTable("Imagem");
 
@@ -44,7 +45,7 @@ public partial class EsquizofreniaContext : DbContext
 
         modelBuilder.Entity<Pedido>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC27653C7A4B");
+            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC27D9F30469");
 
             entity.ToTable("Pedido");
 
@@ -56,7 +57,7 @@ public partial class EsquizofreniaContext : DbContext
 
         modelBuilder.Entity<Produto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC27F0239F63");
+            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC27E795E3FB");
 
             entity.ToTable("Produto");
 
@@ -80,7 +81,7 @@ public partial class EsquizofreniaContext : DbContext
 
         modelBuilder.Entity<ProdutoPedido>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__ProdutoP__3214EC2798CF8EF6");
+            entity.HasKey(e => e.Id).HasName("PK__ProdutoP__3214EC2711514AFB");
 
             entity.ToTable("ProdutoPedido");
 
@@ -101,7 +102,7 @@ public partial class EsquizofreniaContext : DbContext
 
         modelBuilder.Entity<Promocao>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Promocao__3214EC27B1494158");
+            entity.HasKey(e => e.Id).HasName("PK__Promocao__3214EC27AC3AAF37");
 
             entity.ToTable("Promocao");
 
@@ -116,7 +117,7 @@ public partial class EsquizofreniaContext : DbContext
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC277B3042B2");
+            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC2707E7C7A5");
 
             entity.ToTable("Usuario");
 

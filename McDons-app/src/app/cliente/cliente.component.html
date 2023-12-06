@@ -27,7 +27,34 @@
     </div>
   </div>
 
-  <div class="typeSection">
+  <div class="typeSection" *ngIf="(comboList.length) != 0">
+    <div class="typeSectionTitle" id="combos">Combos</div>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4 cardGrid">
+    <div *ngFor="let item of comboList">
+      <div *ngIf="(item.tipo) == 'Combo'">
+        <div class="col">
+          <a (click)="goToInfo()" routerLinkActive="active" class="productLink">
+            <div class="card">
+              <div class="cardImg">
+                <img src="../../assets/img/Products/Lanches/BigDon.png" class="img-fluid card-img-top" alt="ProductImg">
+              </div>
+              <div class="cardLine">
+                <hr>
+              </div>
+              <div class="card-body">
+                <h2 class="card-title" alt="ProductName">{{ item.nome }}</h2>
+                <p class="card-text" alt="Ingredients">{{ item.descricao }}</p>
+                <h3 class="card-text" alt="Ingredients">R${{ item.preco }}</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="typeSection" *ngIf="(hamburguerList.length) != 0">
     <div class="typeSectionTitle" id="hamburguer">Hamburguers</div>
   </div>
   <div class="row row-cols-1 row-cols-md-3 g-4 cardGrid">
@@ -54,7 +81,7 @@
     </div>
   </div>
 
-  <div class="typeSection">
+  <div class="typeSection" *ngIf="(bebidaList.length) != 0">
     <div class="typeSectionTitle" id="bebida">Bebidas</div>
   </div>
   <div class="row row-cols-1 row-cols-md-3 g-4 cardGrid">
@@ -72,6 +99,7 @@
               <div class="card-body">
                 <h3 class="card-title" alt="ProductName">{{ item.nome }}</h3>
                 <p class="card-text" alt="Ingredients">{{ item.descricao }}</p>
+                <h3 class="card-text" alt="Ingredients">R${{ item.preco }}</h3>
               </div>
             </div>
           </a>
@@ -80,7 +108,7 @@
     </div>
   </div>
 
-  <div class="typeSection">
+  <div class="typeSection" *ngIf="(acompanhamentoList.length) != 0">
     <div class="typeSectionTitle" id="acompanhamento">Acompanhamentos</div>
   </div>
   <div class="row row-cols-1 row-cols-md-3 g-4 cardGrid">
@@ -98,6 +126,7 @@
               <div class="card-body">
                 <h3 class="card-title" alt="ProductName">{{ item.nome }}</h3>
                 <p class="card-text" alt="Ingredients">{{ item.descricao }}</p>
+                <h3 class="card-text" alt="Ingredients">R${{ item.preco }}</h3>
               </div>
             </div>
           </a>
@@ -106,7 +135,7 @@
     </div>
   </div>
 
-  <div class="typeSection">
+  <div class="typeSection" *ngIf="(sobremesaList.length) != 0">
     <div class="typeSectionTitle" id="sobremesa">Sobremesas</div>
   </div>
   <div class="row row-cols-1 row-cols-md-3 g-4 cardGrid">
@@ -124,6 +153,7 @@
               <div class="card-body">
                 <h3 class="card-title" alt="ProductName">{{ item.nome }}</h3>
                 <p class="card-text" alt="Ingredients">{{ item.descricao }}</p>
+                <h3 class="card-text" alt="Ingredients">R${{ item.preco }}</h3>
               </div>
             </div>
           </a>
