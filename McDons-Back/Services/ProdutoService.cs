@@ -11,7 +11,6 @@ using Model;
 public class ProdutoService: IProdutoService
 {
     EsquizofreniaContext ctx;
-    ISecurityService security;
 
     public ProdutoService(EsquizofreniaContext ctx)
     {
@@ -26,6 +25,7 @@ public class ProdutoService: IProdutoService
         produto.Tipo = data.tipo;
         produto.Preco = data.preco;
         produto.Descricao = data.descricao;
+        produto.ImagemId = data.ImagemId;
 
         this.ctx.Add(produto);
         await this.ctx.SaveChangesAsync();

@@ -23,38 +23,40 @@ import { ProdutoService } from '../service/produto-service';
   styleUrl: './new-product.component.css'
 })
 export class NewProductComponent {
-  constructor (private product: ProdutoService, private router: Router, private http: HttpClient) { }
+  constructor(private product: ProdutoService, private router: Router, private http: HttpClient) { }
   nome: string = ""
   tipo: string = ""
   preco: number = 0
   descricao: string = ""
 
-  create()
-  {
-    this.product.register({
-      nome: this.nome,
-      tipo: this.tipo,
-      preco: this.preco,
-      descricao: this.descricao
+  create() {
+    this.http.post('http://localhost:5037/product/imagem', this.formData)
+      .subscribe((result: any) => {
+        return this.product.register({
+          nome: this.nome,
+          tipo: this.tipo,
+          preco: this.preco,
+          descricao: this.descricao,
+          ImagemId: result.imgID
+        });
     })
     this.router.navigate(['/adm'])
   }
 
-  uploadFile = (files: any) => {
-    if (files.length === 0) {
+  private formData = new FormData()
+  uploadFile = (files:any) => {
+    if(files.length === 0){
       return;
     }
     let fileToUpload = <File>files[0];
-    const formData = new FormData();
-    formData.append('file', fileToUpload, fileToUpload.name);
+    this.formData = new FormData();
+    this.formData.append('file', fileToUpload, fileToUpload.name);
+
+    console.log(fileToUpload)
 
     var jwt = sessionStorage.getItem('jwt');
-    if (jwt == null)
+    if(jwt == null)
       return
-    formData.append('jwt', jwt)
-     
-    this.http.put('https://localhost:5037/produto/image', formData)
-      .subscribe(result => console.log("ok!"));
+    this.formData.append('jwt', jwt)
   }
-
 }

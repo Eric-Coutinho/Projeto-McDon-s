@@ -5,10 +5,9 @@
                 <p>Foto do Produto</p>
             </mat-label>
             <div class="imageCard">
-                <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)"
-                    style="display:none;">
-                    <img src="../../assets/img/defaultProduct.png">
-                <button mat-raised-button color="primary" (click)="file.click()">Carregar imagem</button>
+                <input type="file" #file class="form-control shadow inputt mb-5" aria-label="default input example"
+                    (change)="uploadFile(file.files)" />
+                <img src="../../assets/img/defaultProduct.png">
             </div>
         </div>
     </div>
