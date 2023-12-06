@@ -34,7 +34,7 @@
     <div *ngFor="let item of comboList">
       <div *ngIf="(item.tipo) == 'Combo'">
         <div class="col">
-          <a (click)="goToInfo()" routerLinkActive="active" class="productLink">
+          <a (click)="goToInfo(item.id)" routerLinkActive="active" class="productLink">
             <div class="card">
               <div class="cardImg">
                 <img src="../../assets/img/Products/Lanches/BigDon.png" class="img-fluid card-img-top" alt="ProductImg">
@@ -61,7 +61,7 @@
     <div *ngFor="let item of hamburguerList">
       <div *ngIf="(item.tipo) == 'Hamburguer'">
         <div class="col">
-          <a (click)="goToInfo()" routerLinkActive="active" class="productLink">
+          <a (click)="goToInfo(item.id)" routerLinkActive="active" class="productLink">
             <div class="card">
               <div class="cardImg">
                 <img src="../../assets/img/Products/Lanches/BigDon.png" class="img-fluid card-img-top" alt="ProductImg">
@@ -88,7 +88,7 @@
     <div *ngFor="let item of bebidaList">
       <div *ngIf="(item.tipo) == 'Bebida'">
         <div class="col">
-          <a (click)="goToInfo()" routerLinkActive="active" class="productLink">
+          <a (click)="goToInfo(item.id)" routerLinkActive="active" class="productLink">
             <div class="card">
               <div class="cardImg">
                 <img src="../../assets/img/Products/Lanches/BigDon.png" class="img-fluid card-img-top" alt="ProductImg">
@@ -115,7 +115,7 @@
     <div *ngFor="let item of acompanhamentoList">
       <div *ngIf="(item.tipo) == 'Acompanhamento'">
         <div class="col">
-          <a (click)="goToInfo()" routerLinkActive="active" class="productLink">
+          <a (click)="goToInfo(item.id)" routerLinkActive="active" class="productLink">
             <div class="card">
               <div class="cardImg">
                 <img src="../../assets/img/Products/Lanches/BigDon.png" class="img-fluid card-img-top" alt="ProductImg">
@@ -142,7 +142,7 @@
     <div *ngFor="let item of sobremesaList">
       <div *ngIf="(item.tipo) == 'Sobremesa'">
         <div class="col">
-          <a (click)="goToInfo()" routerLinkActive="active" class="productLink">
+          <a (click)="goToInfo(item.id)" routerLinkActive="active" class="productLink">
             <div class="card">
               <div class="cardImg">
                 <img src="../../assets/img/Products/Lanches/BigDon.png" class="img-fluid card-img-top" alt="ProductImg">

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule, ViewportScroller } from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
 import { ProdutoService } from '../service/produto-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cliente',
@@ -11,7 +12,7 @@ import { ProdutoService } from '../service/produto-service';
   styleUrl: './cliente.component.css'
 })
 export class ClienteComponent {
-  constructor(private products: ProdutoService, private viewportScroller: ViewportScroller) { }
+  constructor(private products: ProdutoService, private viewportScroller: ViewportScroller, private router: Router) { }
   
   list: any = [];
   comboList: any = [];
@@ -20,8 +21,8 @@ export class ClienteComponent {
   acompanhamentoList: any = [];
   sobremesaList: any = [];
   
-  goToInfo(){
-    console.log("oiii")
+  goToInfo(id: any){
+    this.router.navigate(['/produto'], { queryParams: {id: id} });
   }
 
   public navigateToSection(section: string){

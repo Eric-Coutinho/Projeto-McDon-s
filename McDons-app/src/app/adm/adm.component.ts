@@ -31,6 +31,9 @@ export class AdmComponent implements OnInit{
   }
 
   ngOnInit() {
+
+    this.navigateToSection("card");
+    
     this.products.getAll().subscribe(
       (data: any) => {
         this.list = data;
