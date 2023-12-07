@@ -11,6 +11,7 @@ import { ProdutoComponent } from './produto/produto.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { NewProductComponent } from './new-product/new-product.component';
 import { OrderKitchenComponent } from './order-kitchen/order-kitchen.component';
+import { GraficoComponent } from './grafico/grafico.component';
 
 export const routes: Routes = [
     { path: '', component: LoginComponent },
@@ -22,7 +23,8 @@ export const routes: Routes = [
     { path:'order', component: OrderComponent},
     { path:'orderKitchen', component: OrderKitchenComponent},
     { path: 'totem', component: TotemComponent },
-    { path: 'carrinho', component: CarrinhoComponent }
+    { path: 'carrinho', component: CarrinhoComponent },
+    { path: 'grafico', component: GraficoComponent }
 
 ];
 

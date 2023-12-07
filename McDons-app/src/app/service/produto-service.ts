@@ -14,7 +14,7 @@ export class ProdutoService {
     register(data: ProdutoData)
     {
         this.http.post('produto/create', data)
-            .subscribe(response => console.log(response))
+            .subscribe(response =>  console.log('ELLLLLP'))
     }
 
     getByType(data: ProdutoData)

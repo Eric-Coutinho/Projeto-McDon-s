@@ -141,6 +141,12 @@
     left: 0;
 }
 
+.buttonGrafico{ 
+    position: fixed;
+    bottom: 15em;
+    left: 0;
+}
+
 .buttonCreate button{ 
     background-color: red;
     border-radius: 200px;
@@ -166,6 +172,18 @@
 }
 
 .buttonTotem button{ 
+    background-color: red;
+    border-radius: 200px;
+    height: 4em;
+    width: 4em;
+    padding: 1em;
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+    color: yellow;
+    border-color: transparent;
+}
+
+.buttonGrafico button{ 
     background-color: red;
     border-radius: 200px;
     height: 4em;

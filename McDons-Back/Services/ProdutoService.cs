@@ -19,15 +19,16 @@ public class ProdutoService: IProdutoService
 
     public async Task Create(ProdutoData data)
     {
-        Produto produto = new Produto();
+        Produto produto = new()
+        {
+            Nome = data.nome,
+            Tipo = data.tipo,
+            Preco = data.preco,
+            Descricao = data.descricao,
+            ImagemId = data.ImagemId
+        };
 
-        produto.Nome = data.nome;
-        produto.Tipo = data.tipo;
-        produto.Preco = data.preco;
-        produto.Descricao = data.descricao;
-        produto.ImagemId = data.ImagemId;
-
-        this.ctx.Add(produto);
+        this.ctx.Produtos.Add(produto);
         await this.ctx.SaveChangesAsync();
     }
 

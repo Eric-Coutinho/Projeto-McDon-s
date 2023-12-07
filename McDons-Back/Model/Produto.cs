@@ -15,7 +15,7 @@ public partial class Produto
 
     public string Descricao { get; set; }
 
-    public int? ImagemId { get; set; }
+    public int ImagemId { get; set; }
 
     public virtual Imagem Imagem { get; set; }
 

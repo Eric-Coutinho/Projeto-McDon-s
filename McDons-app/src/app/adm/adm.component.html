@@ -37,7 +37,7 @@
           <a (click)="goToInfo(item.id)" routerLinkActive="active" class="productLink">
             <div class="card">
               <div class="cardImg">
-                <img src="{{'http://localhost:5037/produto/imagem/' + item.imagemId}}" class="img-fluid card-img-top" alt="ProductImg">
+                <img src="http://localhost:5037/produto/imagem/{{item.imagemId}}" class="img-fluid card-img-top" alt="ProductImg">
               </div>
               <div class="cardLine">
                 <hr>
@@ -64,7 +64,7 @@
           <a (click)="goToInfo(item.id)" routerLinkActive="active" class="productLink">
             <div class="card">
               <div class="cardImg">
-                <img src="../../assets/img/Products/Lanches/BigDon.png" class="img-fluid card-img-top" alt="ProductImg">
+                <img src="http://localhost:5037/produto/imagem/{{item.imagemId}}" class="img-fluid card-img-top" alt="ProductImg">
               </div>
               <div class="cardLine">
                 <hr>
@@ -91,7 +91,7 @@
           <a (click)="goToInfo(item.id)" routerLinkActive="active" class="productLink">
             <div class="card">
               <div class="cardImg">
-                <img src="../../assets/img/Products/Lanches/BigDon.png" class="img-fluid card-img-top" alt="ProductImg">
+                <img src="http://localhost:5037/produto/imagem/{{item.imagemId}}" class="img-fluid card-img-top" alt="ProductImg">
               </div>
               <div class="cardLine">
                 <hr>
@@ -117,7 +117,7 @@
           <a (click)="goToInfo(item.id)" routerLinkActive="active" class="productLink">
             <div class="card">
               <div class="cardImg">
-                <img src="../../assets/img/Products/Lanches/BigDon.png" class="img-fluid card-img-top" alt="ProductImg">
+                <img src="http://localhost:5037/produto/imagem/{{item.imagemId}}" class="img-fluid card-img-top" alt="ProductImg">
               </div>
               <div class="cardLine">
                 <hr>
@@ -143,7 +143,7 @@
           <a (click)="goToInfo(item.id)" routerLinkActive="active" class="productLink">
             <div class="card">
               <div class="cardImg">
-                <img src="../../assets/img/Products/Lanches/BigDon.png" class="img-fluid card-img-top" alt="ProductImg">
+                <img src="http://localhost:5037/produto/imagem/{{item.imagemId}}" class="img-fluid card-img-top" alt="ProductImg">
               </div>
               <div class="cardLine">
                 <hr>
@@ -186,6 +186,14 @@
   <a href="/totem" routerLinkActive="active">
     <button>
       <mat-icon>dock</mat-icon>
+    </button>
+  </a>
+</div>
+
+<div class="buttonGrafico">
+  <a href="/grafico" routerLinkActive="active">
+    <button>
+      <mat-icon>pie_chart</mat-icon>
     </button>
   </a>
 </div>

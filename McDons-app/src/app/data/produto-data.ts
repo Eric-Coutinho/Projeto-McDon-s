@@ -3,5 +3,6 @@ export interface ProdutoData{
     tipo: string
     preco: number
     descricao: string
-    ImagemId: any
+    ImagemId: number
 }
+

@@ -20,6 +20,7 @@ namespace McDons_Back.Controllers;
 public class ProductController : ControllerBase
 {
     [HttpPost("create")]
+    [Consumes("multipart/form-data", "application/json")]
     [EnableCors("DefaultPolicy")]
     public async Task<IActionResult> Create(
         [FromBody] ProdutoData produto,
@@ -74,7 +75,7 @@ public class ProductController : ControllerBase
         if (photo is null)
             return NotFound();
 
-        return File(photo.Foto, "image/jpeg");
+        return File(photo.Foto, "image/png");
     }
 
     [DisableRequestSizeLimit]
@@ -84,19 +85,6 @@ public class ProductController : ControllerBase
         [FromServices]CryptoService security
     )
     {
-        var jwtData = Request.Form["jwt"];
-        var jwtObj = JsonSerializer
-            .Deserialize<JwtToken>(jwtData);
-
-        var jwt = jwtObj.jwt;
-
-        var userOjb = security
-            .Validate<JwtPayload>(jwt);
-
-        if (userOjb is null)
-            return Unauthorized();
-        var userId = userOjb.id;
-
         var files = Request.Form.Files;
         if (files is null || files.Count == 0)
             return BadRequest();
